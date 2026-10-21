@@ -225,7 +225,7 @@ type Chat = { chatId: string; phone: string; name?: string; messages: Message[];
 - `apiUrl`: `https://4100.api.green-api.com`
 - Статус инстанса: **Неавторизован** — ожидает сканирования QR (Telegram → Настройки → Устройства → «Привязать десктопное устройство»)
 - `apiTokenInstance`: сохранён в `.env.local` (не в репозитории) — вставить вручную, скопировав из консоли
-- CORS из браузера работает: да / нет (если нет — Vite proxy + rewrites на хостинге) — ___ (проверить после авторизации, см. `docs/fixtures/README.md`)
+- CORS из браузера работает: **да** — запрос с постороннего origin (example.com) к `4100.api.green-api.com` дошёл до сервера (ответ 401 на фиктивный токен, а не ошибка CORS/сети). Vite proxy не нужен.
 - `checkAccount` для получателя вернул: `exist: true, chatId: "5964164415", username: "@a97tg"` — см. `docs/fixtures/checkAccount.json`. `sendMessage` на этот chatId доставлен и получен получателем, ответ получателя подтверждён через `GetChatHistory` (`type: "incoming"`) — полный цикл 1:1-чата по номеру телефона работает.
 - Хостинг: Vercel / GitHub Pages — ___
 
