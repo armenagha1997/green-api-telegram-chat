@@ -13,6 +13,9 @@ export function MessageBubble({ message, onRetry }: MessageBubbleProps) {
   return (
     <div className={isOut ? `${styles.bubble} ${styles.out}` : `${styles.bubble} ${styles.in}`}>
       <p className={styles.text}>{message.text}</p>
+      {message.status === 'error' && message.errorMessage && (
+        <p className={styles.errorText}>{message.errorMessage}</p>
+      )}
       <div className={styles.meta}>
         {isOut && message.status === 'sending' && <span className={styles.status}>…</span>}
         {isOut && message.status === 'error' && (

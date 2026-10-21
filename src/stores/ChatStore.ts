@@ -9,6 +9,7 @@ export interface Message {
   direction: 'in' | 'out'
   timestamp: number
   status: 'sending' | 'sent' | 'error'
+  errorMessage?: string
 }
 
 export interface Chat {
@@ -124,11 +125,14 @@ export class ChatStore {
           msg.status = 'sent'
         }
       })
-    } catch {
+    } catch (error) {
       if (this.api !== api) return
       runInAction(() => {
         const msg = chat.messages.find((m) => m.id === tempId)
-        if (msg) msg.status = 'error'
+        if (msg) {
+          msg.status = 'error'
+          msg.errorMessage = error instanceof ApiError ? error.message : 'Не удалось отправить'
+        }
       })
     }
   }
