@@ -11,8 +11,10 @@
   cursor: pointer;
   text-align: left;
 
+  transition: background-color 0.1s ease;
+
   &:hover {
-    background: #f3f4f6;
+    background: $color-bg-muted;
   }
 }
 
@@ -64,7 +66,7 @@
 .time {
   flex: none;
   font-size: 12px;
-  color: #9ca3af;
+  color: $color-text-secondary;
 }
 
 .preview {
@@ -74,7 +76,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 13px;
-  color: #6b7280;
+  color: $color-text-secondary;
 }
 
 .badge {

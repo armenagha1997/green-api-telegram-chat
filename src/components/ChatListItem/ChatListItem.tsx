@@ -1,20 +1,12 @@
 import { format } from 'date-fns'
 import type { Chat } from '@/stores/ChatStore'
+import { getInitials } from '@/utils/getInitials'
 import styles from './ChatListItem.module.scss'
 
 interface ChatListItemProps {
   chat: Chat
   active: boolean
   onClick: () => void
-}
-
-function getInitials(name: string): string {
-  return name
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? '')
-    .join('')
 }
 
 export function ChatListItem({ chat, active, onClick }: ChatListItemProps) {

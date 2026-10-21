@@ -16,6 +16,7 @@
   padding: 24px;
   border-radius: 12px;
   background: #fff;
+  box-shadow: $shadow-md;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -71,6 +72,11 @@
   border-radius: 8px;
   background: #fff;
   cursor: pointer;
+  transition: background-color 0.1s ease;
+
+  &:hover {
+    background: $color-bg-muted;
+  }
 }
 
 .submit {
@@ -81,6 +87,11 @@
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+  transition: opacity 0.1s ease;
+
+  &:hover:not(:disabled) {
+    opacity: 0.9;
+  }
 
   &:disabled {
     opacity: 0.6;

@@ -13,10 +13,16 @@ export const App = observer(function App() {
     return <LoginForm />
   }
 
+  const hasActiveChat = Boolean(chatStore.activeChat)
+
   return (
     <div className={styles.layout}>
-      <Sidebar />
-      <main className={styles.main}>{chatStore.activeChat ? <ChatWindow /> : <EmptyState />}</main>
+      <div className={hasActiveChat ? `${styles.pane} ${styles.hiddenOnMobile}` : styles.pane}>
+        <Sidebar />
+      </div>
+      <main className={hasActiveChat ? styles.main : `${styles.main} ${styles.hiddenOnMobile}`}>
+        {chatStore.activeChat ? <ChatWindow /> : <EmptyState />}
+      </main>
     </div>
   )
 })

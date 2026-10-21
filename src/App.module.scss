@@ -1,10 +1,27 @@
+@use '@/styles/variables' as *;
+
 .layout {
   display: grid;
   grid-template-columns: 320px 1fr;
   height: 100vh;
 }
 
+.pane {
+  min-width: 0;
+  height: 100%;
+}
+
 .main {
   min-width: 0;
   height: 100%;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hiddenOnMobile {
+    display: none;
+  }
 }
