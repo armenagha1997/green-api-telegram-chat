@@ -1,0 +1,30 @@
+{
+  "_comment": "Реальный incoming текст от друга поймать через ReceiveNotification не успели вручную — аккаунт слишком активный (десятки реальных уведомлений из других чатов/каналов впереди по FIFO). Факт доставки и корректная категоризация 'incoming' подтверждены через GetChatHistory (см. checkAccount.json контекст и переписку выше по диалогу): idMessage 1792586273096, chatId 5964164415, type incoming, textMessage 'Ладно.'. Структура самого incomingMessageReceived подтверждена другими реальными уведомлениями того же инстанса (см. getStateInstance.json и соседние фикстуры) и совпадает с разделом 3 CLAUDE.md.",
+  "receiptId": "<пример, конкретный id меняется>",
+  "body": {
+    "typeWebhook": "incomingMessageReceived",
+    "instanceData": {
+      "idInstance": 410022776184,
+      "wid": "37493003074@c.us",
+      "typeInstance": "telegram"
+    },
+    "timestamp": 1792586273,
+    "idMessage": "1792586273096",
+    "senderData": {
+      "chatId": "5964164415",
+      "chatType": "user",
+      "sender": "5964164415",
+      "chatName": "Armen",
+      "senderName": "Armen",
+      "senderType": "user"
+    },
+    "messageData": {
+      "typeMessage": "textMessage",
+      "textMessageData": {
+        "textMessage": "Ладно.",
+        "forwardingScore": 0,
+        "isForwarded": false
+      }
+    }
+  }
+}

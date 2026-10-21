@@ -1,0 +1,33 @@
+# env
+.env.local
+.env*.local
+
+# deps
+node_modules/
+
+# build
+dist/
+dist-ssr/
+*.local
+
+# editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# os
+.DS_Store
+Thumbs.db
+
+# tooling
+.claude/

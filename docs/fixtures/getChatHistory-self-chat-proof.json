@@ -1,0 +1,18 @@
+{
+  "_comment": "Доказательство: сообщение, отправленное с телефона в группу, где единственный участник — сам аккаунт-инстанс, помечается как 'outgoing', а не 'incoming'. Поэтому ReceiveNotification (incomingWebhook) никогда не поймает такие сообщения — self-чат не подходит для проверки приёма. Нужен реальный второй Telegram-аккаунт.",
+  "type": "outgoing",
+  "idMessage": "1792585451908",
+  "timestamp": 1792585451,
+  "typeMessage": "textMessage",
+  "chatId": "-5485827204",
+  "chatType": "group",
+  "textMessage": "Ну ну ну",
+  "isForwarded": false,
+  "forwardingScore": 0,
+  "statusMessage": "delivered",
+  "sendByApi": false,
+  "deletedMessageId": "",
+  "editedMessageId": "",
+  "isEdited": false,
+  "isDeleted": false
+}
