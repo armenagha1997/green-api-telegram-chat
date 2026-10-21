@@ -1,0 +1,48 @@
+@use '@/styles/variables' as *;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: 1px solid #e5e7eb;
+  background: #fff;
+  overflow: hidden;
+}
+
+.header {
+  flex: none;
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.newChatButton {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: $color-accent;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logoutButton {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.emptyHint {
+  padding: 16px;
+  color: #9ca3af;
+  font-size: 13px;
+}

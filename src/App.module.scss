@@ -1,0 +1,10 @@
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: 100vh;
+}
+
+.main {
+  min-width: 0;
+  height: 100%;
+}

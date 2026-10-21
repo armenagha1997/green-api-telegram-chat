@@ -1,0 +1,93 @@
+@use '@/styles/variables' as *;
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    background: #f3f4f6;
+  }
+}
+
+.active {
+  background: #e8f1fe;
+
+  &:hover {
+    background: #e8f1fe;
+  }
+}
+
+.avatar {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: $color-accent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.time {
+  flex: none;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.preview {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.badge {
+  flex: none;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: $color-accent;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

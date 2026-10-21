@@ -1,4 +1,9 @@
-// Пустое состояние справа: «Выберите чат или создайте новый» — Этап 5.
+import styles from './EmptyState.module.scss'
+
 export function EmptyState() {
-  return null
+  return (
+    <div className={styles.wrapper}>
+      <p>Выберите чат или создайте новый</p>
+    </div>
+  )
 }
