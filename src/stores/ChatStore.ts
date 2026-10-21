@@ -55,11 +55,13 @@ export class ChatStore {
   }
 
   async createChat(phone: string): Promise<boolean> {
-    if (!this.api) return false
+    const api = this.api
+    if (!api) return false
     this.isCreatingChat = true
     this.createChatError = null
     try {
-      const result = await this.api.checkAccount(Number(phone))
+      const result = await api.checkAccount(Number(phone))
+      if (this.api !== api) return false // logout произошёл, пока ждали ответ — не применяем
       if (!result.exist) {
         runInAction(() => {
           this.createChatError =
@@ -83,6 +85,7 @@ export class ChatStore {
       })
       return true
     } catch (error) {
+      if (this.api !== api) return false // logout произошёл, пока ждали ответ
       runInAction(() => {
         this.createChatError =
           error instanceof ApiError ? error.message : 'Не удалось создать чат'
@@ -93,7 +96,8 @@ export class ChatStore {
   }
 
   async send(chatId: string, text: string): Promise<void> {
-    if (!this.api) return
+    const api = this.api
+    if (!api) return
     const chat = this.chats.get(chatId)
     if (!chat) return
 
@@ -111,7 +115,8 @@ export class ChatStore {
     })
 
     try {
-      const { idMessage } = await this.api.sendMessage(chatId, text)
+      const { idMessage } = await api.sendMessage(chatId, text)
+      if (this.api !== api) return // logout произошёл, пока ждали ответ — чат уже сброшен
       runInAction(() => {
         const msg = chat.messages.find((m) => m.id === tempId)
         if (msg) {
@@ -120,6 +125,7 @@ export class ChatStore {
         }
       })
     } catch {
+      if (this.api !== api) return
       runInAction(() => {
         const msg = chat.messages.find((m) => m.id === tempId)
         if (msg) msg.status = 'error'
@@ -176,5 +182,7 @@ export class ChatStore {
   reset(): void {
     this.chats.clear()
     this.activeChatId = null
+    this.isCreatingChat = false
+    this.createChatError = null
   }
 }

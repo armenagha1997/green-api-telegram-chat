@@ -15,7 +15,8 @@ export const ChatWindow = observer(function ChatWindow() {
         <span className={styles.name}>{chat.name || chat.phone || chat.chatId}</span>
       </header>
       <MessageList chat={chat} />
-      <MessageInput chatId={chat.chatId} />
+      {/* key сбрасывает черновик при переключении между чатами */}
+      <MessageInput key={chat.chatId} chatId={chat.chatId} />
     </div>
   )
 })
