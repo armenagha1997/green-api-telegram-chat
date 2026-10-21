@@ -264,7 +264,7 @@ type Chat = { chatId: string; phone: string; name?: string; messages: Message[];
 
 **Этап 6 — Окно чата**
 
-> Сделай ChatWindow, MessageList (автоскролл, разделители по дням), MessageBubble (in/out, время через date-fns, статус sending/sent/error + retry), MessageInput (RHF + Zod: 1–4000 символов, Enter — отправить, Shift+Enter — перенос). Сбрасывай unread при открытии чата.
+> Сделай ChatWindow, MessageList (автоскролл, разделители по дням), MessageBubble (in/out, время через date-fns, статус sending/sent/error + retry), MessageInput (RHF + Zod: 1–4096 символов, Enter — отправить, Shift+Enter — перенос). Сбрасывай unread при открытии чата.
 
 **Этап 7 — Сквозная проверка**
 

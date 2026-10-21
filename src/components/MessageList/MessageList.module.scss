@@ -1,0 +1,22 @@
+.list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  background: #f5f6f8;
+}
+
+.daySeparator {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+
+  span {
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: #e5e7eb;
+    color: #6b7280;
+    font-size: 12px;
+  }
+}
