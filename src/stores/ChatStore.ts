@@ -88,8 +88,7 @@ export class ChatStore {
     } catch (error) {
       if (this.api !== api) return false // logout произошёл, пока ждали ответ
       runInAction(() => {
-        this.createChatError =
-          error instanceof ApiError ? error.message : 'Не удалось создать чат'
+        this.createChatError = error instanceof ApiError ? error.message : 'Не удалось создать чат'
         this.isCreatingChat = false
       })
       return false
