@@ -94,9 +94,7 @@ export function isTextMessage(
   return messageData.typeMessage === 'textMessage'
 }
 
-export function isExtendedTextMessage(
-  messageData: IncomingMessageData,
-): messageData is {
+export function isExtendedTextMessage(messageData: IncomingMessageData): messageData is {
   typeMessage: 'extendedTextMessage'
   extendedTextMessageData: ExtendedTextMessageData
 } {
