@@ -149,14 +149,14 @@ describe('ChatStore.createChat', () => {
     const api = createMockApi({
       checkAccount: vi
         .fn()
-        .mockResolvedValue({ exist: true, chatId: '5964164415', username: '@a97tg' }),
+        .mockResolvedValue({ exist: true, chatId: '10000000', username: '@username' }),
     })
     store.setApi(api)
 
-    const ok = await store.createChat('37499013074')
+    const ok = await store.createChat('79991234567')
     expect(ok).toBe(true)
-    expect(store.chats.get('5964164415')).toMatchObject({ name: '@a97tg' })
-    expect(store.activeChatId).toBe('5964164415')
+    expect(store.chats.get('10000000')).toMatchObject({ name: '@username' })
+    expect(store.activeChatId).toBe('10000000')
   })
 
   it('выставляет понятную ошибку, если номер не зарегистрирован', async () => {

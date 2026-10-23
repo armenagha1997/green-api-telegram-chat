@@ -226,7 +226,7 @@ type Chat = { chatId: string; phone: string; name?: string; messages: Message[];
 - Статус инстанса: **Неавторизован** — ожидает сканирования QR (Telegram → Настройки → Устройства → «Привязать десктопное устройство»)
 - `apiTokenInstance`: сохранён в `.env.local` (не в репозитории) — вставить вручную, скопировав из консоли
 - CORS из браузера работает: **да** — запрос с постороннего origin (example.com) к `4100.api.green-api.com` дошёл до сервера (ответ 401 на фиктивный токен, а не ошибка CORS/сети). Vite proxy не нужен.
-- `checkAccount` для получателя вернул: `exist: true, chatId: "5964164415", username: "@a97tg"` — см. `docs/fixtures/checkAccount.json`. `sendMessage` на этот chatId доставлен и получен получателем, ответ получателя подтверждён через `GetChatHistory` (`type: "incoming"`) — полный цикл 1:1-чата по номеру телефона работает.
+- `checkAccount` для получателя вернул `exist: true` с реальным `chatId`/`username` (пример формата — см. `docs/fixtures/checkAccount.json`, персональные данные получателя заменены). `sendMessage` на этот chatId доставлен и получен получателем, ответ получателя подтверждён через `GetChatHistory` (`type: "incoming"`) — полный цикл 1:1-чата по номеру телефона работает.
 - Хостинг: Vercel / GitHub Pages — ___
 
 **Важная находка при тестировании `ReceiveNotification`:** self-чат (группа только с самим аккаунтом-инстансом)

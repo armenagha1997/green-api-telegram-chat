@@ -10,7 +10,7 @@ import {
 
 const textMessageWebhook: IncomingMessageWebhook = {
   typeWebhook: 'incomingMessageReceived',
-  instanceData: { idInstance: 410022776184, wid: '37493003074@c.us', typeInstance: 'telegram' },
+  instanceData: { idInstance: 1101123456, wid: '79876543210@c.us', typeInstance: 'telegram' },
   timestamp: 1763115112,
   idMessage: '1763115112345',
   senderData: {

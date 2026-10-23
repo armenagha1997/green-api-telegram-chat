@@ -16,7 +16,7 @@ const now = Date.now()
 const chatWithUnread: Chat = {
   chatId: '1',
   phone: '79991234567',
-  name: '@a97tg',
+  name: '@username',
   unread: 3,
   messages: [
     {
