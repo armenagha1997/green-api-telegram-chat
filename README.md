@@ -137,7 +137,10 @@ Multi-stage `Dockerfile`: сборка в `node:22-alpine`, раздача ст�
 
 ## Демо
 
-Ссылка на задеплоенную версию: _добавить после деплоя_.
+**https://armenagha1997.github.io/green-api-telegram-chat/**
+
+Деплой — GitHub Pages через GitHub Actions ([.github/workflows/deploy.yml](./.github/workflows/deploy.yml)),
+автоматически при пуше в `master`.
 
 ## Ограничения
 
